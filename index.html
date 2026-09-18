@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prapanjan Waterproofing & Co | Advanced Waterproofing Solutions</title>
+    <meta name="description" content="Prapanjan Waterproofing & Co offers advanced waterproofing solutions for roofs, swimming pools, water tanks, and industrial areas in Neyveli, Tamil Nadu.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0B2B5B',
+                        brandLightBlue: '#1E5B9E',
+                        brandOrange: '#F97316',
+                        brandYellow: '#FBBF24',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles for Water Effect and Animations */
+        .water-wave {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(0deg, #0B2B5B 0%, #1E5B9E 100%);
+        }
+        .water-wave::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50%;
+            width: 200%;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 40%;
+            animation: rotate 10s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0B2B5B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1E5B9E; }
+    </style>
+</head>
+<body class="font-sans text-slate-700 antialiased">
+
+    <!-- 1. NAVBAR -->
+    <nav class="bg-brandBlue text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- Placeholder for logo image. Replace with <img src="images/logo.png" ...> -->
+                <div class="w-12 h-12 bg-brandYellow rounded-full flex items-center justify-center text-brandBlue font-bold text-xl shadow-inner">
+                    P
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-wider uppercase leading-tight">Prapanjan</h1>
+                    <p class="text-xs text-brandYellow tracking-widest">WATERPROOFING</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#home" class="hover:text-brandYellow transition">Home</a>
+                <a href="#services" class="hover:text-brandYellow transition">Services</a>
+                <a href="#about" class="hover:text-brandYellow transition">About</a>
+                <a href="#process" class="hover:text-brandYellow transition">Process</a>
+                <a href="#contact" class="hover:text-brandYellow transition">Contact</a>
+            </div>
+            
+            <a href="tel:9498828572" class="hidden md:flex items-center gap-2 bg-brandOrange hover:bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition shadow-md">
+                <i class="fas fa-phone-alt"></i> Call Now
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brandBlue border-t border-blue-800">
+            <div class="flex flex-col px-4 py-4 space-y-3">
+                <a href="#home" class="hover:text-brandYellow transition">Home</a>
+                <a href="#services" class="hover:text-brandYellow transition">Services</a>
+                <a href="#about" class="hover:text-brandYellow transition">About</a>
+                <a href="#process" class="hover:text-brandYellow transition">Process</a>
+                <a href="#contact" class="hover:text-brandYellow transition">Contact</a>
+                <a href="tel:9498828572" class="bg-brandOrange text-center py-2 rounded text-white font-bold"><i class="fas fa-phone-alt mr-2"></i> Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO -->
+    <section id="home" class="water-wave text-white pt-20 pb-28 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 space-y-6">
+                    <span class="inline-block bg-brandOrange/20 text-brandYellow border border-brandOrange/50 px-4 py-1 rounded-full text-sm font-semibold tracking-wide">
+                        <i class="fas fa-check-circle mr-2"></i> Advanced Waterproofing Solutions
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-serif">
+                        Protect Your <span class="text-brandYellow">Dream Home</span> From Water Damage
+                    </h1>
+                    <p class="text-lg text-blue-100 max-w-lg">
+                        Prapanjan Waterproofing & Co provides comprehensive waterproofing treatments for roofs, water tanks, swimming pools, and industrial structures. 
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#contact" class="bg-brandYellow text-brandBlue font-bold px-6 py-3 rounded-lg hover:bg-yellow-400 transition shadow-lg flex items-center gap-2">
+                            <i class="fas fa-file-invoice"></i> Get Free Quote
+                        </a>
+                        <a href="https://wa.me/919498828572" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-lg transition shadow-lg flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <!-- Placeholder for Hero Image. Replace with <img src="images/hero.webp" ...> -->
+                    <div class="relative w-full max-w-md h-80 bg-blue-800/50 rounded-xl border border-blue-400/30 flex items-center justify-center overflow-hidden shadow-2xl">
+                        <i class="fas fa-home text-8xl text-blue-300/30 absolute"></i>
+                        <div class="text-center z-10 p-6">
+                            <i class="fas fa-tint text-6xl text-brandYellow mb-4 animate-bounce"></i>
+                            <p class="text-blue-200 font-semibold">100% Leak-Proof Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Wave Decoration -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-gray-50"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-brandBlue mb-4">Our Waterproofing Services</h2>
+                <div class="w-20 h-1 bg-brandOrange mx-auto mb-6"></div>
+                <p class="text-slate-600">We offer a wide range of advanced waterproofing solutions tailored to your specific structural needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl p-8 hover-lift shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-brandLightBlue text-2xl mb-6">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandBlue mb-3">Roof & Terrace Waterproofing</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Protect your terrace and roof from water leakage, seepage, and structural damage with our durable coating solutions.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl p-8 hover-lift shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-brandLightBlue text-2xl mb-6">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandBlue mb-3">Water Tank Waterproofing</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Safe and effective waterproofing solutions for overhead and underground water tanks to ensure clean water storage.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl p-8 hover-lift shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-brandLightBlue text-2xl mb-6">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandBlue mb-3">Swimming Pool Waterproofing</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Specialized waterproofing treatment for swimming pool structures to prevent leakage and maintain water quality.</p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-xl p-8 hover-lift shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-brandLightBlue text-2xl mb-6">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandBlue mb-3">Industrial Waterproofing</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Robust solutions for industrial buildings, factories, and warehouses exposed to harsh weather and chemicals.</p>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-xl p-8 hover-lift shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-brandLightBlue text-2xl mb-6">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandBlue mb-3">Crack Repair & Grouting</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Expansion joint treatment, crack filling, and PU grouting to seal structural gaps effectively.</p>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-xl p-8 hover-lift shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-brandLightBlue text-2xl mb-6">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandBlue mb-3">Membrane & Polymer Coatings</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Application of bitumen sheets, fiberglass, thermal insulation, and polymer paste for superior protection.</p>
+                </div>
+            </div>
+            
+            <!-- Additional Services Tags -->
+            <div class="mt-12 flex flex-wrap justify-center gap-3">
+                <span class="bg-white border border-gray-200 text-slate-600 px-4 py-2 rounded-full text-sm shadow-sm"><i class="fas fa-check text-green-500 mr-2"></i> Car Parking</span>
+                <span class="bg-white border border-gray-200 text-slate-600 px-4 py-2 rounded-full text-sm shadow-sm"><i class="fas fa-check text-green-500 mr-2"></i> Garden Roofs</span>
+                <span class="bg-white border border-gray-200 text-slate-600 px-4 py-2 rounded-full text-sm shadow-sm"><i class="fas fa-check text-green-500 mr-2"></i> Epoxy Work</span>
+                <span class="bg-white border border-gray-200 text-slate-600 px-4 py-2 rounded-full text-sm shadow-sm"><i class="fas fa-check text-green-500 mr-2"></i> External & Internal Plaster</span>
+                <span class="bg-white border border-gray-200 text-slate-600 px-4 py-2 rounded-full text-sm shadow-sm"><i class="fas fa-check text-green-500 mr-2"></i> Foundation & Columns</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ABOUT -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 relative">
+                    <div class="bg-brandBlue rounded-xl p-8 text-white relative z-10 shadow-xl">
+                        <h3 class="text-3xl font-bold font-serif mb-4 text-brandYellow">Prapanjan Waterproofing & Co</h3>
+                        <p class="text-blue-100 mb-6 leading-relaxed">
+                            We are a dedicated team of waterproofing experts based in Neyveli, Tamil Nadu. With years of hands-on experience, we understand the unique challenges posed by water seepage and structural damage in residential and commercial buildings.
+                        </p>
+                        <p class="text-blue-100 mb-6 leading-relaxed">
+                            Our motto is <strong>"Application is my professional"</strong>. We don't just apply chemicals; we deliver long-lasting protection using high-quality materials from trusted brands like Asian Paints, Dr. Fixit, Fosroc, Master Builders, and Sika.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="bg-brandOrange p-3 rounded-full">
+                                <i class="fas fa-user-tie text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">L. Prapanjan</p>
+                                <p class="text-sm text-brandYellow">Proprietor, D.Civil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative background element -->
+                    <div class="absolute -top-4 -left-4 w-full h-full border-2 border-brandOrange rounded-xl z-0 hidden md:block"></div>
+                </div>
+                
+                <div class="md:w-1/2 space-y-6">
+                    <h2 class="text-3xl font-bold font-serif text-brandBlue">Why Choose Us?</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 mt-1">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">High-Quality Materials</h4>
+                                <p class="text-slate-600 text-sm">We use only top-tier branded waterproofing chemicals and membranes for lasting results.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 mt-1">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Expert Application</h4>
+                                <p class="text-slate-600 text-sm">Our team is trained in the latest application techniques to ensure a perfect seal every time.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 mt-1">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Affordable Pricing</h4>
+                                <p class="text-slate-600 text-sm">Get premium waterproofing services at competitive market rates without compromising quality.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Timely Completion</h4>
+                                <p class="text-slate-600 text-sm">We value your time and ensure all projects are completed within the agreed timeframe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. WHY CHOOSE US (Already integrated into About section above for brevity, but can be standalone) -->
+
+    <!-- 6. WATERPROOFING SOLUTIONS (Process Section) -->
+    <section id="process" class="py-20 bg-brandBlue text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">Our Waterproofing Process</h2>
+                <div class="w-20 h-1 bg-brandOrange mx-auto mb-6"></div>
+                <p class="text-blue-200">We follow a systematic approach to ensure complete protection against water ingress.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 bg-brandOrange text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg relative z-10">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Inspection</h3>
+                    <p class="text-blue-200 text-sm">We thoroughly inspect the site to identify the root cause of leakage and seepage.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 bg-brandOrange text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg relative z-10">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Surface Preparation</h3>
+                    <p class="text-blue-200 text-sm">Cleaning the surface, removing loose particles, and repairing cracks before application.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 bg-brandOrange text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg relative z-10">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Material Application</h3>
+                    <p class="text-blue-200 text-sm">Applying the chosen waterproofing membrane, coating, or grouting as per specifications.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 bg-brandOrange text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg relative z-10">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Curing & Testing</h3>
+                    <p class="text-blue-200 text-sm">Allowing proper curing time and conducting water ponding tests to ensure zero leakage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PROJECTS GALLERY -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-brandBlue mb-4">Our Recent Projects</h2>
+                <div class="w-20 h-1 bg-brandOrange mx-auto mb-6"></div>
+                <p class="text-slate-600">A glimpse of our completed waterproofing works across various sectors.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-48 bg-slate-300 flex items-center justify-center text-slate-500">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-brandBlue">Residential Roof Waterproofing</h4>
+                        <p class="text-sm text-slate-500 mt-1">Neyveli Township</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-48 bg-slate-300 flex items-center justify-center text-slate-500">
+                        <i class="fas fa-swimming-pool text-4xl"></i>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-brandBlue">Swimming Pool Treatment</h4>
+                        <p class="text-sm text-slate-500 mt-1">Cuddalore</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-48 bg-slate-300 flex items-center justify-center text-slate-500">
+                        <i class="fas fa-industry text-4xl"></i>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-brandBlue">Industrial Shed Waterproofing</h4>
+                        <p class="text-sm text-slate-500 mt-1">Neyveli Lignite Corporation Area</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <p class="text-slate-500 italic">Note: Replace the placeholder images with actual project photos in the <code>images/projects/</code> folder.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. SERVICE AREAS & TESTIMONIALS (Combined for layout efficiency) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Service Areas -->
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold font-serif text-brandBlue mb-6">Our Service Areas</h2>
+                    <p class="text-slate-600 mb-6">We proudly serve residential, commercial, and industrial clients across the following regions:</p>
+                    <ul class="grid grid-cols-2 gap-4">
+                        <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-brandOrange"></i> Neyveli</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-brandOrange"></i> Vadakuthu</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-brandOrange"></i> Cuddalore</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-brandOrange"></i> Panruti</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-brandOrange"></i> Chidambaram</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-brandOrange"></i> Vridhachalam</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold text-brandBlue mt-10 mb-4">Brands We Use</h3>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <span class="bg-gray-100 px-3 py-1 rounded text-sm font-semibold text-slate-600">Asian Paints</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded text-sm font-semibold text-slate-600">Dr. Fixit</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded text-sm font-semibold text-slate-600">Fosroc</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded text-sm font-semibold text-slate-600">Master Builders</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded text-sm font-semibold text-slate-600">Sika</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded text-sm font-semibold text-slate-600">Bostik</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold font-serif text-brandBlue mb-6">What Our Clients Say</h2>
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 relative">
+                            <i class="fas fa-quote-left text-brandYellow text-3xl absolute top-4 left-4 opacity-50"></i>
+                            <p class="text-slate-600 italic relative z-10 mb-4 pl-6">"Prapanjan Waterproofing did an excellent job on my terrace. The leakage problem is completely solved. Highly recommended!"</p>
+                            <div class="flex items-center gap-3 pl-6">
+                                <div class="w-10 h-10 bg-brandBlue rounded-full flex items-center justify-center text-white font-bold">R</div>
+                                <div>
+                                    <h5 class="font-bold text-sm">Ramesh K.</h5>
+                                    <p class="text-xs text-slate-500">Homeowner, Neyveli</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 relative">
+                            <i class="fas fa-quote-left text-brandYellow text-3xl absolute top-4 left-4 opacity-50"></i>
+                            <p class="text-slate-600 italic relative z-10 mb-4 pl-6">"We hired them for our factory shed waterproofing. Their team was professional and completed the work on time. Good quality materials used."</p>
+                            <div class="flex items-center gap-3 pl-6">
+                                <div class="w-10 h-10 bg-brandBlue rounded-full flex items-center justify-center text-white font-bold">S</div>
+                                <div>
+                                    <h5 class="font-bold text-sm">Suresh M.</h5>
+                                    <p class="text-xs text-slate-500">Factory Manager, Cuddalore</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-brandBlue mb-4">Frequently Asked Questions</h2>
+                <div class="w-20 h-1 bg-brandOrange mx-auto"></div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100">
+                    <button class="faq-btn w-full text-left px-6 py-4 font-bold text-brandBlue flex justify-between items-center focus:outline-none">
+                        How long does waterproofing last?
+                        <i class="fas fa-chevron-down text-brandOrange transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600 text-sm">
+                        The lifespan depends on the type of material used and the surface conditions. Generally, high-quality membrane and coating waterproofing can last anywhere from 5 to 10 years or more with proper maintenance.
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100">
+                    <button class="faq-btn w-full text-left px-6 py-4 font-bold text-brandBlue flex justify-between items-center focus:outline-none">
+                        Do you provide a warranty for your work?
+                        <i class="fas fa-chevron-down text-brandOrange transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600 text-sm">
+                        Yes, we provide a service warranty for our waterproofing applications. The warranty period varies depending on the specific solution applied and the site conditions. We discuss this transparently during the quotation phase.
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100">
+                    <button class="faq-btn w-full text-left px-6 py-4 font-bold text-brandBlue flex justify-between items-center focus:outline-none">
+                        Can you waterproof an old building with existing leaks?
+                        <i class="fas fa-chevron-down text-brandOrange transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600 text-sm">
+                        Absolutely. We specialize in remedial waterproofing. We first identify the source of the leak, treat the cracks and damaged areas, and then apply the appropriate waterproofing system to restore the structure's integrity.
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100">
+                    <button class="faq-btn w-full text-left px-6 py-4 font-bold text-brandBlue flex justify-between items-center focus:outline-none">
+                        Is the waterproofing chemical safe for drinking water tanks?
+                        <i class="fas fa-chevron-down text-brandOrange transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600 text-sm">
+                        Yes, for water tanks, we use food-grade, non-toxic waterproofing materials that are certified safe for potable water storage. We ensure proper curing before the tank is put back into service.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CONTACT -->
+    <section id="contact" class="py-20 bg-brandBlue text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">Contact Us Today</h2>
+                <div class="w-20 h-1 bg-brandOrange mx-auto mb-6"></div>
+                <p class="text-blue-200">Get in touch for a free site inspection and quotation. We are here to protect your property.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Info -->
+                <div class="lg:w-1/3 space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brandOrange p-4 rounded-full text-white">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Our Address</h4>
+                            <p class="text-blue-200 text-sm leading-relaxed">No. 24 Murugan Kovil Street,<br>Vadakuthu, Neyveli - 1,<br>Cuddalore Dt, 607 303,<br>Tamil Nadu, India.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brandOrange p-4 rounded-full text-white">
+                            <i class="fas fa-phone-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Call Us</h4>
+                            <p class="text-blue-200 text-sm"><a href="tel:9498828572" class="hover:text-white transition">+91 94988 28572</a></p>
+                            <p class="text-blue-200 text-sm"><a href="tel:9524782627" class="hover:text-white transition">+91 95247 82627</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brandOrange p-4 rounded-full text-white">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Email Us</h4>
+                            <p class="text-blue-200 text-sm"><a href="mailto:panjanproof@gmail.com" class="hover:text-white transition">panjanproof@gmail.com</a></p>
+                            <p class="text-blue-200 text-sm"><a href="http://www.prapanjanwaterproofing.com" target="_blank" class="hover:text-white transition">www.prapanjanwaterproofing.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="lg:w-2/3 bg-white text-slate-800 rounded-xl p-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-brandBlue mb-6">Request a Free Quote</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-1">Your Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brandLightBlue focus:border-transparent outline-none" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-1">Phone Number</label>
+                                <input type="tel" id="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brandLightBlue focus:border-transparent outline-none" placeholder="9876543210">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Service Required</label>
+                            <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brandLightBlue focus:border-transparent outline-none bg-white">
+                                <option value="">Select a service</option>
+                                <option value="Roof Waterproofing">Roof Waterproofing</option>
+                                <option value="Water Tank Waterproofing">Water Tank Waterproofing</option>
+                                <option value="Swimming Pool Waterproofing">Swimming Pool Waterproofing</option>
+                                <option value="Industrial Waterproofing">Industrial Waterproofing</option>
+                                <option value="Crack Repair">Crack Repair / Grouting</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brandLightBlue focus:border-transparent outline-none" placeholder="Describe your requirement..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brandOrange hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition shadow-lg flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. GOOGLE MAP -->
+    <section class="h-96 w-full">
+        <!-- Embedded Google Map for Neyveli, Tamil Nadu -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15612.442478811489!2d79.5367!3d11.6000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a54c0e0e0e0e0e1%3A0x1234567890abcdef!2sNeyveli%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="grayscale hover:grayscale-0 transition duration-500">
+        </iframe>
+    </section>
+
+    <!-- 12. FOOTER -->
+    <footer class="bg-brandBlue text-white pt-16 pb-8 border-t border-blue-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand Info -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-brandYellow rounded-full flex items-center justify-center text-brandBlue font-bold text-lg">
+                            P
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold tracking-wider uppercase leading-tight">Prapanjan</h2>
+                            <p class="text-xs text-brandYellow tracking-widest">WATERPROOFING</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-blue-200 mb-4">Your trusted partner for advanced waterproofing solutions in Tamil Nadu.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-brandYellow transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-brandYellow transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-brandYellow transition"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/919498828572" class="text-blue-200 hover:text-brandYellow transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-brandYellow">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-blue-200">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#process" class="hover:text-white transition">Our Process</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-brandYellow">Our Services</h4>
+                    <ul class="space-y-2 text-sm text-blue-200">
+                        <li><a href="#services" class="hover:text-white transition">Roof Waterproofing</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Water Tank Treatment</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Swimming Pool</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Industrial Waterproofing</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Crack Repair</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-brandYellow">Contact Info</h4>
+                    <ul class="space-y-3 text-sm text-blue-200">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt mt-1 text-brandOrange"></i>
+                            <span>No. 24 Murugan Kovil Street, Vadakuthu, Neyveli - 1, Cuddalore Dt, 607 303.</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone-alt text-brandOrange"></i>
+                            <span>+91 94988 28572 / +91 95247 82627</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-brandOrange"></i>
+                            <span>panjanproof@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-6 text-center text-sm text-blue-300">
+                <p>&copy; <span id="year"></span> Prapanjan Waterproofing & Co. All rights reserved. | Application is my Professional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919498828572" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition z-50 animate-bounce">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // FAQ Accordion
+        const faqButtons = document.querySelectorAll('.faq-btn');
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Close all other FAQs
+                faqButtons.forEach(otherBtn => {
+                    if (otherBtn !== button) {
+                        otherBtn.nextElementSibling.classList.add('hidden');
+                        otherBtn.querySelector('i').style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current FAQ
+                content.classList.toggle('hidden');
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            // Construct WhatsApp message
+            const whatsappMessage = `*New Quote Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Message:* ${message}`;
+            const whatsappNumber = '919498828572'; // Owner's number
+
+            // Open WhatsApp with the pre-filled message
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            this.reset();
+            alert('Thank you! Your request is being redirected to WhatsApp.');
+        });
+    </script>
+</body>
+</html>
