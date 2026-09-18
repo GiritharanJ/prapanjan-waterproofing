@@ -111,189 +111,380 @@ select:focus-visible {
 .btn-block { width: 100%; justify-content: center; }
 
 /* ---------- Top utility bar ---------- */
-.topbar {
-  background: var(--navy-950);
-  color: #c9d6e6;
-  font-size: 0.82rem;
-}
-.topbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: 8px;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.topbar a { color: #c9d6e6; }
-.topbar a:hover { color: var(--gold-400); }
-.topbar-links { display: flex; gap: 20px; }
-.topbar-links span i { color: var(--gold-500); margin-right: 6px; }
+/* =========================================
+   PREMIUM WHITE HEADER
+========================================= */
 
-/* ---------- Navbar ---------- */
+.topbar {
+    background: #ffffff;
+    color: var(--navy-700);
+    font-size: 0.80rem;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 7px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.topbar a {
+    color: var(--navy-900);
+}
+
+.topbar a:hover {
+    color: var(--ember-500);
+}
+
+.topbar-links {
+    display: flex;
+    gap: 22px;
+}
+
+.topbar-links span i {
+    color: var(--gold-500);
+    margin-right: 6px;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
 .navbar {
-  background: var(--navy-900);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 18px rgba(0,0,0,0.18);
+    background: rgba(255, 255, 255, 0.97);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 1px solid #e9edf2;
+
+    box-shadow:
+        0 4px 18px rgba(7, 26, 51, 0.08);
+
+    backdrop-filter: blur(12px);
 }
+
 .navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-block: 10px;
 }
-.brand { display: flex; align-items: center; gap: 12px; color: #fff; }
-.brand img { width: 46px; height: 46px; border-radius: 50%; }
-.brand-name { font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.1; }
-.brand-tag { font-size: 0.68rem; letter-spacing: 0.14em; color: var(--gold-500); }
+
+
+/* Logo */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--navy-950);
+}
+
+.brand img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+.brand-name {
+    font-family: var(--font-head);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+
+    color: var(--navy-950);
+}
+
+.brand-tag {
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+
+    color: var(--gold-500);
+
+    font-weight: 700;
+}
+
+
+/* Navigation */
 
 .nav-links {
-  display: flex;
-  gap: 30px;
-  font-size: 0.94rem;
-  font-weight: 500;
-  color: #dce6f2;
-}
-.nav-links a { position: relative; padding-block: 6px; }
-.nav-links a::after {
-  content: "";
-  position: absolute; left: 0; bottom: 0;
-  width: 0; height: 2px; background: var(--gold-500);
-  transition: width 0.2s ease;
-}
-.nav-links a:hover { color: #fff; }
-.nav-links a:hover::after { width: 100%; }
+    display: flex;
+    gap: 28px;
 
-.nav-cta { display: flex; align-items: center; gap: 10px; }
-.nav-call {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--ember-500); color: #fff;
-  padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    color: var(--navy-900);
 }
-.nav-call:hover { background: var(--ember-600); }
+
+.nav-links a {
+    position: relative;
+    padding-block: 6px;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold-500);
+
+    transition: width 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--ember-500);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* Call button */
+
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-call {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--ember-500);
+    color: #ffffff;
+
+    padding: 10px 19px;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+    font-size: 0.88rem;
+
+    box-shadow:
+        0 7px 16px rgba(228, 87, 46, 0.20);
+
+    transition: 0.2s ease;
+}
+
+.nav-call:hover {
+    background: var(--ember-600);
+    transform: translateY(-1px);
+}
+
+
+/* Mobile menu button */
 
 .menu-toggle {
-  display: none;
-  background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: var(--navy-950);
+
+    font-size: 1.45rem;
+
+    cursor: pointer;
 }
+
+
+/* Mobile menu */
 
 .mobile-menu {
-  display: none;
-  background: var(--navy-800);
-  border-top: 1px solid rgba(255,255,255,0.1);
+    display: none;
+
+    background: #ffffff;
+
+    border-top: 1px solid #edf0f4;
+
+    box-shadow:
+        0 8px 20px rgba(7, 26, 51, 0.08);
 }
-.mobile-menu.open { display: block; }
-.mobile-menu .container { display: flex; flex-direction: column; padding-block: 16px; gap: 4px; }
-.mobile-menu a { color: #dce6f2; padding: 10px 0; font-weight: 500; }
+
+.mobile-menu.open {
+    display: block;
+}
+
+.mobile-menu .container {
+    display: flex;
+    flex-direction: column;
+
+    padding-block: 14px;
+
+    gap: 2px;
+}
+
+.mobile-menu a {
+    color: var(--navy-900);
+
+    padding: 10px 0;
+
+    font-weight: 600;
+}
+
+.mobile-menu a:hover {
+    color: var(--ember-500);
+}
+
 
 @media (max-width: 900px) {
-  .nav-links, .nav-call span.call-label { display: none; }
-  .menu-toggle { display: block; }
-  .topbar .topbar-links { display: none; }
-}
 
+    .nav-links,
+    .nav-call span.call-label {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .topbar .topbar-links {
+        display: none;
+    }
+}
 /* ---------- Hero ---------- */
 /* =========================================
    HERO
 ========================================= */
 
+/* =========================================
+   PREMIUM FULL IMAGE HERO
+========================================= */
+
 .hero {
     position: relative;
-    min-height: 620px;
 
-    /* Main hero background */
-    background-image: url("../images/hero-photo.jpg");
+    min-height: 650px;
+
+    /*
+       IMPORTANT:
+       Absolute URL avoids ../images path problems
+       when CSS is inside /css/style.css
+    */
+    background-image: url("/images/hero-photo.jpg");
+
     background-size: cover;
+
+    /*
+       Show the house/roof clearly
+    */
     background-position: center center;
+
     background-repeat: no-repeat;
 
     overflow: hidden;
+
     color: var(--navy-950);
 }
 
 
-/* -----------------------------------------
-   Soft readability overlay
------------------------------------------ */
+/* =========================================
+   IMAGE READABILITY OVERLAY
+========================================= */
 
 .hero-overlay {
     position: absolute;
     inset: 0;
 
+    z-index: 1;
+
     background:
         linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.96) 0%,
-            rgba(255, 255, 255, 0.92) 32%,
-            rgba(255, 255, 255, 0.65) 50%,
-            rgba(255, 255, 255, 0.05) 72%,
-            rgba(255, 255, 255, 0) 100%
+            rgba(255,255,255,0.97) 0%,
+            rgba(255,255,255,0.93) 32%,
+            rgba(255,255,255,0.70) 50%,
+            rgba(255,255,255,0.20) 70%,
+            rgba(255,255,255,0.00) 100%
         );
-
-    z-index: 1;
 }
 
 
-/* -----------------------------------------
-   Container
------------------------------------------ */
+/* =========================================
+   HERO CONTAINER
+========================================= */
 
 .hero-container {
     position: relative;
+
     z-index: 2;
 
-    min-height: 620px;
+    min-height: 650px;
 
     display: flex;
+
     align-items: center;
 
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 55px;
+    padding-bottom: 55px;
 }
 
 
-/* -----------------------------------------
-   Content
------------------------------------------ */
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
     width: 58%;
+
     max-width: 650px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
 
-    gap: 20px;
+    gap: 18px;
 }
 
 
-/* -----------------------------------------
-   Badge
------------------------------------------ */
+/* =========================================
+   BADGE
+========================================= */
 
 .eyebrow-badge {
     display: inline-flex;
+
     align-items: center;
-    gap: 9px;
+
+    gap: 8px;
 
     width: fit-content;
 
-    padding: 8px 16px;
+    padding: 8px 15px;
 
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255,255,255,0.90);
 
-    border: 1px solid rgba(242, 169, 59, 0.65);
+    border: 1px solid rgba(242,169,59,0.65);
 
     border-radius: 999px;
 
-    color: var(--navy-900);
+    color: var(--navy-950);
 
-    font-size: 0.84rem;
+    font-size: 0.83rem;
+
     font-weight: 700;
 
-    box-shadow: 0 5px 18px rgba(7, 26, 51, 0.08);
+    box-shadow:
+        0 5px 16px rgba(7,26,51,0.10);
 
     backdrop-filter: blur(8px);
 }
@@ -303,76 +494,84 @@ select:focus-visible {
 }
 
 
-/* -----------------------------------------
-   Heading
------------------------------------------ */
+/* =========================================
+   HEADING
+========================================= */
 
 .hero h1 {
     margin: 0;
 
-    max-width: 650px;
+    max-width: 680px;
 
     font-family: var(--font-head);
 
-    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-size: clamp(2.7rem, 5vw, 4.25rem);
 
-    line-height: 1.05;
+    line-height: 1.03;
 
     letter-spacing: -0.025em;
 
     color: var(--navy-950);
 
-    text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+    text-shadow:
+        0 1px 1px rgba(255,255,255,0.5);
 }
 
 
-/* Gold highlight */
+/* Gold heading */
 
 .hero h1 span {
-    color: var(--gold-500);
+    color: var(--ember-500);
+
+    display: inline;
 }
 
 
-/* -----------------------------------------
-   Description
------------------------------------------ */
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .hero-sub {
     margin: 0;
 
-    max-width: 580px;
+    max-width: 570px;
 
     color: var(--navy-700);
 
     font-size: 1.05rem;
 
-    line-height: 1.75;
+    line-height: 1.72;
 
     font-weight: 500;
 }
 
 
-/* -----------------------------------------
-   Services line
------------------------------------------ */
+/* =========================================
+   SERVICES
+========================================= */
 
 .hero-services-line {
     display: flex;
+
     flex-wrap: wrap;
+
     align-items: center;
 
-    gap: 8px;
+    gap: 7px;
 
     width: 100%;
 
-    padding: 14px 0;
+    padding: 13px 0;
 
-    border-top: 1px solid rgba(7, 26, 51, 0.16);
-    border-bottom: 1px solid rgba(7, 26, 51, 0.16);
+    border-top:
+        1px solid rgba(7,26,51,0.16);
 
-    color: var(--navy-700);
+    border-bottom:
+        1px solid rgba(7,26,51,0.16);
 
-    font-size: 0.92rem;
+    color: var(--navy-900);
+
+    font-size: 0.90rem;
 
     font-weight: 600;
 }
@@ -382,9 +581,9 @@ select:focus-visible {
 }
 
 
-/* -----------------------------------------
-   Action buttons
------------------------------------------ */
+/* =========================================
+   BUTTONS
+========================================= */
 
 .hero-actions {
     display: flex;
@@ -401,30 +600,29 @@ select:focus-visible {
 
 .btn-whatsapp {
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 9px;
 
-    background: #25D366;
+    background: #25d366;
 
-    color: #fff;
+    color: #ffffff;
 
-    padding: 13px 22px;
+    padding: 14px 22px;
 
     border-radius: 8px;
 
-    font-size: 0.95rem;
+    font-size: 0.94rem;
 
     font-weight: 700;
 
     box-shadow:
-        0 8px 20px rgba(37, 211, 102, 0.25);
+        0 8px 20px rgba(37,211,102,0.25);
 
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
+    transition: 0.22s ease;
 }
 
 .btn-whatsapp:hover {
@@ -433,41 +631,40 @@ select:focus-visible {
     transform: translateY(-2px);
 
     box-shadow:
-        0 12px 25px rgba(37, 211, 102, 0.32);
+        0 12px 25px rgba(37,211,102,0.30);
 }
 
 .btn-whatsapp i {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 }
 
 
-/* Call */
+/* Phone */
 
 .btn-call {
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 9px;
 
     background: var(--navy-950);
 
-    color: #fff;
+    color: #ffffff;
 
-    padding: 13px 22px;
+    padding: 14px 22px;
 
     border-radius: 8px;
 
-    font-size: 0.95rem;
+    font-size: 0.94rem;
 
     font-weight: 700;
 
     border: 2px solid var(--navy-950);
 
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+    transition: 0.22s ease;
 }
 
 .btn-call:hover {
@@ -481,23 +678,22 @@ select:focus-visible {
 }
 
 
-/* -----------------------------------------
-   Trust chips
------------------------------------------ */
+/* =========================================
+   TRUST POINTS
+========================================= */
 
 .hero-chips {
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(4, minmax(0,1fr));
 
-    gap: 18px;
+    gap: 20px;
 
     width: 100%;
 
     margin-top: 3px;
 }
-
 
 .hero-chip {
     display: flex;
@@ -506,55 +702,59 @@ select:focus-visible {
 
     gap: 8px;
 
-    color: var(--navy-700);
+    color: var(--navy-900);
 
-    font-size: 0.78rem;
+    font-size: 0.77rem;
 
     line-height: 1.35;
 
     font-weight: 600;
 }
 
-
 .hero-chip i {
     flex-shrink: 0;
 
-    color: var(--gold-500);
+    color: var(--ember-500);
 
-    font-size: 0.95rem;
+    font-size: 0.90rem;
 
     margin-top: 2px;
 }
 
 
-/* -----------------------------------------
-   Location badge
------------------------------------------ */
+/* =========================================
+   LOCATION BADGE
+========================================= */
 
 .hero-location {
     position: absolute;
 
-    right: 25px;
-    bottom: 30px;
+    right: 28px;
+
+    bottom: 28px;
 
     z-index: 3;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 2px;
 
-    padding: 11px 17px;
+    padding: 12px 18px;
 
-    background: rgba(7, 26, 51, 0.90);
+    background:
+        rgba(7,26,51,0.90);
 
-    color: #fff;
+    color: #ffffff;
 
-    border-left: 4px solid var(--gold-500);
+    border-left:
+        4px solid var(--gold-500);
 
-    border-radius: 8px;
+    border-radius: 9px;
 
-    box-shadow: 0 10px 25px rgba(7, 26, 51, 0.20);
+    box-shadow:
+        0 12px 28px rgba(7,26,51,0.25);
 
     backdrop-filter: blur(8px);
 }
@@ -566,184 +766,9 @@ select:focus-visible {
 }
 
 .hero-location span {
+    color: #e7edf5;
+
     font-size: 0.78rem;
-
-    color: #e4edf7;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1100px) {
-
-    .hero-content {
-        width: 65%;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.4rem, 5vw, 3.5rem);
-    }
-
-    .hero-overlay {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(255,255,255,0.96) 0%,
-                rgba(255,255,255,0.90) 45%,
-                rgba(255,255,255,0.30) 75%,
-                rgba(255,255,255,0.05) 100%
-            );
-    }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-
-    .hero {
-        min-height: auto;
-
-        background-position:
-            62% center;
-    }
-
-
-    .hero-overlay {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(255,255,255,0.96) 0%,
-                rgba(255,255,255,0.93) 58%,
-                rgba(255,255,255,0.65) 82%,
-                rgba(255,255,255,0.25) 100%
-            );
-    }
-
-
-    .hero-container {
-        min-height: auto;
-
-        padding-top: 48px;
-        padding-bottom: 120px;
-    }
-
-
-    .hero-content {
-        width: 100%;
-
-        max-width: 100%;
-
-        gap: 17px;
-    }
-
-
-    .eyebrow-badge {
-        font-size: 0.78rem;
-
-        padding: 7px 13px;
-    }
-
-
-    .hero h1 {
-        font-size: clamp(2.25rem, 10vw, 3rem);
-
-        line-height: 1.08;
-    }
-
-
-    .hero-sub {
-        font-size: 0.96rem;
-
-        line-height: 1.65;
-    }
-
-
-    .hero-services-line {
-        font-size: 0.82rem;
-
-        line-height: 1.8;
-
-        gap: 5px;
-    }
-
-
-    .hero-actions {
-        width: 100%;
-
-        flex-direction: column;
-    }
-
-
-    .btn-whatsapp,
-    .btn-call {
-        width: 100%;
-
-        padding: 14px 18px;
-    }
-
-
-    .hero-chips {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 14px;
-    }
-
-
-    .hero-chip {
-        font-size: 0.74rem;
-    }
-
-
-    .hero-location {
-        right: 18px;
-        left: 18px;
-
-        bottom: 18px;
-
-        align-items: center;
-
-        text-align: center;
-    }
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 480px) {
-
-    .hero-container {
-        padding-top: 35px;
-        padding-bottom: 115px;
-    }
-
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-
-    .hero-chips {
-        grid-template-columns: 1fr 1fr;
-
-        gap: 12px;
-    }
-
-
-    .hero-chip {
-        font-size: 0.70rem;
-    }
-
-
-    .hero-location {
-        padding: 9px 13px;
-    }
 }
 /* ---------- Section shells ---------- */
 .section { padding-block: 88px; }
